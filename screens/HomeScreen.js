@@ -2,12 +2,20 @@ import React, { Component } from "react";
 
 import { View, Text } from "react-native";
 import TabBarIcon from "../components/TabBarIcon";
+import EventList from "../components/EventList";
 
 class HomeScreen extends Component {
   state = {};
   render() {
     return (
-      <View style={{ flex: 1, flexDirection: "column", alignItems: "center" }}>
+      <View
+        style={{
+          flex: 1,
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "flex-start"
+        }}
+      >
         <Text>Home</Text>
         <View>
           <View
@@ -22,6 +30,8 @@ class HomeScreen extends Component {
             <Text>Subscribed Categories</Text>
             <TabBarIcon name="ios-options" />
           </View>
+          <Text>Favorited Events</Text>
+          <EventList />
         </View>
       </View>
     );
