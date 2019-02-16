@@ -3,34 +3,46 @@ import React, { Component } from "react";
 import { View, Text } from "react-native";
 import TabBarIcon from "../components/TabBarIcon";
 import EventList from "../components/EventList";
+import CategoryList from "../components/CategoryList";
 
 class HomeScreen extends Component {
+  static navigationOptions = {
+    title: "Home"
+  };
   state = {};
   render() {
     return (
       <View
         style={{
-          flex: 1,
           flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "flex-start"
+          alignItems: "center"
         }}
       >
-        <Text>Home</Text>
-        <View>
+        <View
+          style={{
+            flexDirection: "column",
+            alignItems: "center",
+            backgroundColor: "#F7F8FA",
+            padding: 10,
+            width: 370,
+            height: 520
+          }}
+        >
           <View
             style={{
-              flex: 3,
               flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "space-around",
-              width: "100%"
+              justifyContent: "space-between",
+              width: 350,
+              padding: 5
             }}
           >
             <Text>Subscribed Categories</Text>
             <TabBarIcon name="ios-options" />
           </View>
-          <Text>Favorited Events</Text>
+          <CategoryList />
+          <View style={{ paddingBottom: 10 }}>
+            <Text>Favorited Events</Text>
+          </View>
           <EventList />
         </View>
       </View>
