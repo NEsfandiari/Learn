@@ -17,6 +17,7 @@ class EventList extends Component {
           <Event />
           <Event />
           <Event />
+          <Event />
         </ScrollView>
       </View>
     );
